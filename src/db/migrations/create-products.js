@@ -11,12 +11,22 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
-        allowNull:true,
+        allowNull: true,
         unique: true
       },
       price: {
+        type: Sequelize.DECIMAL(10,2),
+      },
+      categoryId: {
         type: Sequelize.INTEGER,
-        
+        allowNull: false,
+        references: {
+          model: 'Categories',
+          key: 'id'
+        },
+        field: 'categoryId',
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
       },
       createdAt: {
         allowNull: false,

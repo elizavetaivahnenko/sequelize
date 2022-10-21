@@ -2,14 +2,17 @@
 const {
   Model
 } = require('sequelize');
+const reciept = require('./reciept');
 module.exports = (sequelize, DataTypes) => {
   class Products extends Model {
     static associate(models) {
-      Products.hasMany(models.Categories,{
+      Products.belongsTo(models.Categories,{
         foreignKey:{
-          field: 'productId'
+          field: 'categoryId'
         }
-      })
+      }),
+      Products.belongsToMany(models.Orders, {through: 'Reciept' }
+      )
     }
   }
   Products.init({

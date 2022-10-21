@@ -5,6 +5,7 @@ function generateProductsCheese(){
     cheese.push({
       name: `cheese${i}`,
       price: `3${i}`,
+      categoryId: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     })
@@ -18,6 +19,7 @@ function generateProductsMeet(){
     meet.push({
       name: `chiken${i}`,
       price: `4${i}`,
+      categoryId: 2,
       createdAt: new Date(),
       updatedAt: new Date()
     })
